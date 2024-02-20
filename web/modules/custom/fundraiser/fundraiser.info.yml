@@ -1,0 +1,12 @@
+name: 'Fundraiser Handler'
+type: module
+description: 'Webform handler to create a fundraiser page.'
+package: 'Maraton Project'
+core_version_requirement: ^9.4 || ^10
+dependencies:
+  - 'webform:webform'
+
+# Information added by Drupal.org packaging script on 2023-06-12
+version: '1.0.0'
+project: 'fundraiser'
+datestamp: 1686598823

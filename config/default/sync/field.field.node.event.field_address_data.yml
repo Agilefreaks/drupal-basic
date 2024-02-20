@@ -1,0 +1,22 @@
+uuid: 3383f40c-f0f0-41cc-8de7-186618f65180
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address_data
+    - node.type.event
+  module:
+    - text
+id: node.event.field_address_data
+field_name: field_address_data
+entity_type: node
+bundle: event
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

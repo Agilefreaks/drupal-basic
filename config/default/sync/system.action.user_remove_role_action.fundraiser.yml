@@ -1,0 +1,14 @@
+uuid: 0767562f-11e9-4dac-982f-72a4c2cd2f38
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.fundraiser
+  module:
+    - user
+id: user_remove_role_action.fundraiser
+label: 'Remove the Fundraiser role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: fundraiser

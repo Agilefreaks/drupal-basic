@@ -1,0 +1,39 @@
+uuid: 1f9720ed-0aa9-4600-98a2-8092e9361d97
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.fundraisers
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__fundraisers_fundraiser_own_content
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:fundraisers-fundraiser_own_content'
+settings:
+  id: 'views_block:fundraisers-fundraiser_own_content'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      fundraiser: fundraiser

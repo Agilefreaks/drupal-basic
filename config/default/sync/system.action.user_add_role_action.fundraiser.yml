@@ -1,0 +1,14 @@
+uuid: 027a635f-4250-4593-ac0b-421bd722a663
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.fundraiser
+  module:
+    - user
+id: user_add_role_action.fundraiser
+label: 'Add the Fundraiser role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: fundraiser
