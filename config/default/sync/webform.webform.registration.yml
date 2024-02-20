@@ -25,6 +25,16 @@ elements: |-
     '#title': 'Last Name'
     '#required': true
     '#required_error': 'Last Name is required'
+  race:
+    '#type': select
+    '#title': Race
+    '#options':
+      5km: 5km
+      10km: 10km
+      21km: 21km
+      42km: 42km
+    '#required': true
+    '#required_error': 'Race is required'
   fundraiser:
     '#type': checkbox
     '#title': Fundraiser
