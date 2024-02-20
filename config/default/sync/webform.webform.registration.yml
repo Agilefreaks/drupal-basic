@@ -178,10 +178,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
+  confirmation_type: inline
   confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: 'You are now register!'
+  confirmation_message: '<p>Thank you for your registration. See you soon!</p>'
   confirmation_attributes: {  }
   confirmation_back: false
   confirmation_back_label: ''
@@ -213,13 +213,13 @@ settings:
 access:
   create:
     roles:
-      - anonymous
       - authenticated
     users: {  }
     permissions: {  }
   view_any:
     roles:
       - administrator
+      - organizer
     users: {  }
     permissions: {  }
   update_any:
@@ -240,6 +240,7 @@ access:
   view_own:
     roles:
       - administrator
+      - organizer
     users: {  }
     permissions: {  }
   update_own:
@@ -250,21 +251,25 @@ access:
   delete_own:
     roles:
       - administrator
+      - organizer
     users: {  }
     permissions: {  }
   administer:
     roles:
       - administrator
+      - organizer
     users: {  }
     permissions: {  }
   test:
     roles:
       - administrator
+      - organizer
     users: {  }
     permissions: {  }
   configuration:
     roles:
       - administrator
+      - organizer
     users: {  }
     permissions: {  }
 handlers:

@@ -1,0 +1,19 @@
+uuid: 80e7cc55-2ff1-40b6-b036-d29c7a0f70ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+    - node.type.fundraiser
+    - node.type.page
+  module:
+    - media
+    - node
+id: fundraiser
+label: Fundraiser
+weight: 5
+is_admin: null
+permissions:
+  - 'edit own fundraiser content'
+  - 'edit own image media'
+  - 'edit own page content'
