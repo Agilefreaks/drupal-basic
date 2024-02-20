@@ -3,8 +3,8 @@
 namespace Drupal\fundraiser\Plugin\WebformHandler;
 
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
-use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\webform\Plugin\WebformHandlerBase;
 use Drupal\webform\WebformSubmissionInterface;
@@ -23,11 +23,17 @@ use Drupal\webform\WebformSubmissionInterface;
  * )
  */
 class FundraiserHandler extends WebformHandlerBase {
-
+  
   /**
    * {@inheritdoc}
    */
   public function postSave(WebformSubmissionInterface $webform_submission, $update = TRUE) {
+    $submitter = $webform_submission->getOwner();
+
+    if (!$submitter || $submitter->isAnonymous()) {
+      return;
+    }
+
     if ($webform_submission->getElementData('fundraiser')) {
       $fid = $webform_submission->getElementData('fundraiser_page_image');
       $file = File::load($fid);
@@ -59,8 +65,15 @@ class FundraiserHandler extends WebformHandlerBase {
       ]);
       $media->save();
 
+      if (!$submitter->hasRole('fundraiser')) {
+        $submitter->addRole('fundraiser');
+        $submitter->save();
+      }
+
+      $uid = $submitter->id() ? $submitter->id() : 1;
       $node = Node::create([
         'type' => 'fundraiser',
+        'uid' => $uid,
         'title' => $webform_submission->getElementData('fundraiser_page_title'),
         'body' => [
           'value' => $webform_submission->getElementData('fundraiser_page_description'),
