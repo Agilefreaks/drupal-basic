@@ -1,0 +1,42 @@
+uuid: 9eb4d311-037a-4c06-b749-ac48461ee4d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fundraiser.body
+    - field.field.node.fundraiser.field_image
+    - image.style.wide
+    - node.type.fundraiser
+  module:
+    - image
+    - text
+    - user
+id: node.fundraiser.default
+targetEntityType: node
+bundle: fundraiser
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

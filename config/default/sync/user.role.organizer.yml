@@ -1,0 +1,43 @@
+uuid: ef26bb3b-a686-4320-927f-33c837c6d015
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.webform
+  module:
+    - node
+    - system
+    - webform
+    - webform_node
+    - webform_submission_log
+id: organizer
+label: Organizer
+weight: 4
+is_admin: null
+permissions:
+  - 'access any webform configuration'
+  - 'access content'
+  - 'access content overview'
+  - 'access webform overview'
+  - 'access webform submission log'
+  - 'access webform submission user'
+  - 'administer webform'
+  - 'administer webform element access'
+  - 'administer webform submission'
+  - 'create webform'
+  - 'create webform content'
+  - 'delete any webform content'
+  - 'delete own webform'
+  - 'delete webform submissions any node'
+  - 'delete webform submissions own node'
+  - 'edit any webform'
+  - 'edit any webform content'
+  - 'edit webform submissions any node'
+  - 'edit webform submissions own node'
+  - 'revert webform revisions'
+  - 'view any webform submission'
+  - 'view own unpublished content'
+  - 'view own webform submission'
+  - 'view webform revisions'
+  - 'view webform submissions any node'
+  - 'view webform submissions own node'
